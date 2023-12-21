@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Project</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Kanit:wght@500&family=Libre+Baskerville:ital@1&family=Noto+Serif+Vithkuqi:wght@500&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+       <div class="top">
+        <img src="images/Rotom_dex.webp" alt="rotom image" height="200px" width="200px" style="margin-top: -8px;image-rendering: optimizeQuality;margin-left: -8px;">
+        <h1> Pokemon Guide</h1>
+        <img src="images/Rotom_Phone.webp" alt="" height="200px" style="margin-top: -8px;margin-right: -20px;image-rendering:optimizeQuality;">
+       </div>
+    
+       <div class="superdiv" style="display:flex;flex-direction: column;gap: 50px;justify-content: center;align-items: center;position: relative;left: 0;top:0;">
+    <div class="container">
+        <form action="/enter" method="post">
+            <input type="text" name="monster" placeholder="Enter Pokemon Name/ID" required class="textbox">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+        <div class="bolt">
+
+            <!-- <% if(locals.sun) {%> -->
+
+                <div id="pokemon_image" style="float: left;">
+                <img  src=<%=sun  %> alt="POkemon Image" id="picart">
+                <!-- <% } %> -->
+            </div>
+
+            <div class="prakar">
+                <% if(locals.photo){ %>
+                <% var firstLetter=photo[0].toUpperCase() %>
+                <% var name=photo.slice(1);  %>
+                <% var join=firstLetter+name%>
+                 <h2> <span> <%=join  %> </span>  </h2>
+                <h2> PokeDex No: <%=id  %></h2>
+                 <!-- <img src="images/Types.png" alt=""> -->
+                <% for (let index = 0; index < typo.length; index++) { %>
+                    <% var dualType=typo[index].type.name %>
+                    <% var firstLetter1=dualType[0].toUpperCase() %>
+                    <% var name1=dualType.slice(1);  %>
+                    <% var join1=firstLetter1+name1 %>
+                    <!-- <% var type_png="images/"+join1+".png" %> -->
+                    <!-- <h3 style="font-size: 3.5vw;" ><%=join1  %></h3>     -->
+                    <% if(dualType=="fire") {%>
+                        <img class="attribute" src="/images/Fire.png" alt="" style="float: left;">
+                    <% }else if(dualType=="flying"){ %>
+                        <img class="attribute" src="/images/Flying.png" alt=""> 
+                     
+                    <% }else if(dualType=="fighting"){ %>
+                        <img class="attribute" src="/images/fighting.png" alt="">
+                    <% }else if(dualType=="bug"){ %>
+                        <img class="attribute" src="/images/Bug.png" alt="">
+                    <% }else if(dualType=="dark"){ %>
+                        <img class="attribute" src="/images/Dark.png" alt="">
+                    <% }else if(dualType=="dragon"){ %>
+                        <img class="attribute" src="/images/Dragon.png" alt="">
+                    <% }else if(dualType=="electric"){ %>
+                        <img class="attribute" src="/images/Electric.png" alt="">
+                    <% } else if(dualType=="fairy"){ %>
+                        <img class="attribute" src="/images/Fairy.png" alt="">
+                    <% } else if(dualType=="ghost"){ %>
+                        <img class="attribute" src="/images/Ghost.png" alt="">
+                    <% }else if(dualType=="grass"){ %>
+                        <img class="attribute" src="/images/Grass.png" alt="">
+                    <% }else if(dualType=="ground"){ %>
+                        <img class="attribute" src="/images/Ground.png" alt="">
+                    <% }else if(dualType=="ice"){ %>
+                        <img class="attribute" src="/images/Ice.png" alt="">
+                    <% }else if(dualType=="normal"){ %>
+                        <img class="attribute" src="/images/Normal.png" alt="">
+                    <% }else if(dualType=="poison"){ %>
+                        <img class="attribute" src="/images/Poison.png" alt="">
+                    <% }else if(dualType=="psychic"){ %>
+                        <img class="attribute" src="/images/Psychic.png" alt="">
+                    <% }else if(dualType=="rock"){ %>
+                        <img class="attribute" src="/images/Rock.png" alt="">
+                    <% }else if(dualType=="steel"){ %>
+                        <img class="attribute" src="/images/Steel.png" alt="">
+                    <% } else if(dualType=="water"){ %>
+                        <img class="attribute" src="/images/Water.png" alt="">
+                    <% } %>   
+                <% } %> 
+                <!-- abilities-->
+                <% for(j=0;j<ability.length;j++){ %>
+                    <% const Galaxy=ability[j].ability.name %>
+                    <% let amelia=Galaxy[0].toUpperCase() %>
+                    <% let sumaru=Galaxy.slice(1) %>
+                    <% let rem=amelia+sumaru %>
+                    <h3> <%=rem  %> : <%=detail  %></h3> 
+                
+            <% } %>
+        </div>
+
+            <% }%>
+            <% if(locals.bug){ %>
+                <div class="error">
+                    <img src="images/Sleeping Pikachu.png" alt="error message image" height="200px" style="margin-top: 50px;">
+                    <h2> <%=bug  %></h2>
+                </div>
+                
+            <% } %>
+        </div>
+   
+  
+</div>
+
+</div>
+<footer style="clear: left;">
+    <p> This is just for fun </p>
+    <p> @Tanmay Gharat</p>
+    <!-- <p>Generation 7 and above is not available currently</p> -->
+
+</footer>
+</body>
+
+</html>
